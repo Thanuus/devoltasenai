@@ -3,15 +3,15 @@ console.log("-------- 1 --------\n")
 let produto = {
     id: 101,
     nome: "Teclado",
-    preco: 150,
+    preco: 150.00,
     estoque: 8,
     categoria: "Periféricos"
 }
 
 let valorTotal = produto.preco * produto.estoque;
-console.log(valorTotal)
+console.log("Valor total: " + valorTotal.toFixed(2))
 
-console.log(produto.nome + " - R$ " + produto.preco + " - Estoque: " + produto.estoque)
+console.log(produto.nome + " - R$ " + produto.preco.toFixed(2) + " - Estoque: " + produto.estoque)
 
 produto.estoque = produto.estoque - 2;
 console.log(produto.estoque)
@@ -22,6 +22,9 @@ if (produto.estoque > 0){
     console.log("Produto esgotado")
 }
 
+// if ternario:
+//console.log(`Produto ${produto.estoque > 0 ? "disponível" : "indisponível"}`)
+
 console.log("\n-------- 2 --------\n")
 
 //2
@@ -29,7 +32,11 @@ console.log("\n-------- 2 --------\n")
 let cliente = {
     id: 1,
     nome: "Carlos Oliveira",
-    endereco: {rua: "Rua A", numero: 41, cidade: "Valença"},
+    endereco: {
+        rua: "Rua A", 
+        numero: 41, 
+        cidade: "Valença"
+    },
     interesses: ["Celular", "Computador", "Notebook"]
 }
 
@@ -87,7 +94,11 @@ console.log(pEstAti)
 console.log("\n-------- 4 --------\n")
 
 function buscarProdutoPorId(id){
-    return produtos.find(produto => produto.id === id)
+    if(produtos.find(produto => produto.id === id)){
+        return produtos.find(produto => produto.id === id)
+    } else {
+        return "Produto nao encontrado"
+    }
 }
 
 console.log(buscarProdutoPorId(3))
@@ -97,8 +108,14 @@ console.log("\n-------- 5 --------\n")
 let nomeProdutos = produtos.map(produto => produto.nome)
 console.log(nomeProdutos)
 
-let resumosProdutos = produtos.map(produto => produto.id)
-console.log(resumosProdutos)
+//let resumosProdutos = produtos.map(produto => produto.id)
+//console.log(resumosProdutos)
+
+let produtosOrganizados = produtos.map(produto =>({
+    id: produto.id,
+    nome: produto.nome,
+    preco: produto.preco
+}))
 
 console.log("\n-------- 6 --------\n")
 
@@ -113,5 +130,19 @@ console.log(produtoAtualizado)
 
 console.log("\n-------- 7 --------\n")
 
-
+let produtosAtualizados = produtos.map(produto => {
+    if (produto.id === 5){
+        return {...produto, estoque: 10}
+    }
+    return produto
+})
+console.log(produtosAtualizados)
     
+console.log("\n-------- 8 --------\n")
+
+let produtosComNovo = [...produtos, { id: 11, nome: "Monitor 19 polegadas", categoria: "Monitores", preco: 899.90, estoque: 5, ativo: true }];
+console.log(produtosComNovo)
+
+let produtosSemRemovido = produtosComNovo.filter(produto => produto.id !== 6)
+
+console.log(produtosSemRemovido)
