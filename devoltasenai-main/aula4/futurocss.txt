@@ -1,0 +1,133 @@
+/* Estilo geral da página */
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff;
+  color: #2d3436;
+}
+
+/* Título (Alinhado à esquerda como na foto) */
+h2 {
+  text-align: left;
+  color: #2d3436;
+  font-size: 32px;
+  font-weight: bold;
+  max-width: 1200px;
+  margin: 10px auto 25px;
+  padding: 0 20px;
+}
+
+/* Container dos Pokémons (4 colunas em telas grandes) */
+.pokemon-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 20px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cards */
+.pokemon-card {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px;
+  padding: 20px;
+  height: 140px;
+  color: #ffffff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Número do Pokémon (#1, #2, etc.) */
+.pokemon-card .number {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+/* Informações da esquerda (Nome e Tipos) */
+.pokemon-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+/* Nome do Pokémon */
+.pokemon-card h3 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin: 0 0 10px 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Badges de Tipo */
+.types {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.type {
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: lowercase;
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagem do Pokémon */
+.pokemon-card img {
+  width: 95px;
+  height: 95px;
+  object-fit: contain;
+  z-index: 2;
+  margin-top: 15px;
+  transition: transform 0.3s ease;
+}
+
+.pokemon-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Cores de fundo dos Cards por Tipo */
+.grass  { background-color: #78c850; }
+.fire   { background-color: #f08030; }
+.water  { background-color: #6890f0; }
+.bug    { background-color: #a8b820; }
+.normal { background-color: #a8a878; }
+
+/* Cores das Badges de Tipo */
+.type.grass  { background-color: #63a83f; }
+.type.poison { background-color: #a040a0; }
+.type.fire   { background-color: #d6671c; }
+.type.flying { background-color: #7088e6; }
+.type.water  { background-color: #4f78d6; }
+.type.bug    { background-color: #8c9c16; }
+.type.normal { background-color: #8a8a5c; }
+
+/* Responsividade para celulares */
+@media (max-width: 600px) {
+  .pokemon-container {
+    grid-template-columns: 1fr;
+  }
+}

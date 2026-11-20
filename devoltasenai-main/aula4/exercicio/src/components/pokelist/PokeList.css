@@ -1,0 +1,88 @@
+/* Estilo geral da página */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #dfe6f1);
+}
+
+/* Título */
+h2 {
+    text-align: center;
+    color: #2d3436;
+    font-size: 32px;
+    margin: 35px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Container dos Pokémons */
+.pokemon-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 25px;
+    padding: 20px 40px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cards */
+.pokemon-card {
+    background: white;
+    border-radius: 18px;
+    padding: 20px 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+/* Efeito ao passar o mouse */
+.pokemon-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-color: #e63946;
+}
+
+/* Nome do Pokémon */
+.pokemon-card h3 {
+    color: #34495e;
+    font-size: 18px;
+    text-transform: capitalize;
+    margin: 5px 0 15px;
+}
+
+/* Imagem do Pokémon */
+.pokemon-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.pokemon-card:hover img {
+    transform: scale(1.15);
+}
+
+/* Responsividade para celulares */
+@media (max-width: 600px) {
+    h2 {
+        font-size: 24px;
+    }
+
+    .pokemon-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .pokemon-card {
+        padding: 15px 5px;
+    }
+
+    .pokemon-card img {
+        width: 100px;
+        height: 100px;
+    }
+}
