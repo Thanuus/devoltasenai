@@ -1,0 +1,209 @@
+/* CONTAINER PRINCIPAL */
+.estoque-container {
+    min-height: 100vh;
+    padding: 40px 20px;
+    background: #f1f5f9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: Arial, sans-serif;
+}
+
+/* CARD */
+.estoque-card {
+    width: 100%;
+    max-width: 850px;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* CABEÇALHO */
+.estoque-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.estoque-header h1 {
+    color: #1e293b;
+    font-size: 28px;
+    margin: 0;
+}
+
+/* FORMULÁRIO */
+.estoque-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo label {
+    color: #334155;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #334155;
+    background: #fff;
+    outline: none;
+    transition: 0.2s;
+    box-sizing: border-box;
+}
+
+.campo input:focus,
+.campo select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* BOTÕES */
+.formulario-acoes {
+    display: flex;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.btn {
+    padding: 13px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-adicionar {
+    background: #2563eb;
+    color: white;
+    width: 100%;
+}
+
+.btn-adicionar:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* LISTAGEM */
+.estoque-listagem {
+    margin-top: 40px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 25px;
+}
+
+.listagem-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.listagem-header h2 {
+    color: #1e293b;
+    font-size: 21px;
+    margin: 0;
+}
+
+.contador {
+    background: #dbeafe;
+    color: #1d4ed8;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* LISTA DE EMPRÉSTIMOS */
+.lista-produtos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.produto {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 18px 20px;
+    transition: 0.2s;
+}
+
+.produto:hover {
+    border-color: #93c5fd;
+    background: #f1f7ff;
+    transform: translateY(-2px);
+}
+
+.produto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.produto-info strong {
+    color: #1e293b;
+    font-size: 17px;
+}
+
+.produto-info span {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* LISTA VAZIA */
+.lista-vazia {
+    text-align: center;
+    color: #94a3b8;
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 10px;
+    padding: 30px 15px;
+    font-size: 15px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+    .estoque-container {
+        padding: 20px 12px;
+    }
+
+    .estoque-card {
+        padding: 22px 18px;
+    }
+
+    .estoque-header h1 {
+        font-size: 23px;
+    }
+
+    .listagem-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .listagem-header h2 {
+        font-size: 19px;
+    }
+
+    .produto {
+        padding: 15px;
+    }
+}
